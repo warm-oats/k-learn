@@ -23,7 +23,7 @@ class DictController(commands.Cog):
         button_view = DirectionalButtonView(pos_contexts, self._dict_view.edit_word_info)
 
         # Defer due to fetching definitions can take long
-        await ctx.response.defer(ephemeral = True, thinking = True)
+        await ctx.response.defer(thinking = True)
 
         await self._dict_view.post_word_info(ctx, pos_contexts, button_view)
 

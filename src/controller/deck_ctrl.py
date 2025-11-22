@@ -26,7 +26,7 @@ class DeckController(commands.Cog):
         decks_info = self._deck_model.get_decks(user_id)
 
         # Defer due to fetching definitions can take long
-        await ctx.response.defer(ephemeral = True, thinking = True)
+        await ctx.response.defer(thinking = True)
 
         await self._deck_view.post_decks_info(decks_info, user_name, ctx)
     
@@ -35,7 +35,7 @@ class DeckController(commands.Cog):
     async def add_deck(self, ctx: discord.Interaction, deck_name: str):
         
         # Defer due to fetching definitions can take long
-        await ctx.response.defer(ephemeral = True, thinking = True)
+        await ctx.response.defer(thinking = True)
         
         try:
             user_id = ctx.user.id

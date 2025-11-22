@@ -19,7 +19,7 @@ class PosTagController(commands.Cog):
     async def extract_pos(self, ctx: discord.Interaction, *, sentence: str, colorize: bool = False):
 
         # Defer due to fetching translations can take long
-        await ctx.response.defer(ephemeral = True, thinking = True)
+        await ctx.response.defer(thinking = True)
 
         # Contains mapping of pos: [words] pairs
         pos_tag_map = self._pos_tag_model.extract_pos(sentence)

@@ -29,7 +29,7 @@ async def setup_hook():
 
 @bot.tree.command(name = "ping", description = "Check bot ping")
 async def ping(ctx):
-    await ctx.response.send_message(content = f"Pong! {round(bot.latency * 1000, 1)}ms", ephemeral = True)
+    await ctx.response.send_message(content = f"Pong! {round(bot.latency * 1000, 1)}ms")
 
 if __name__ == "__main__":
     bot.run(f"{BOT_TOKEN}")

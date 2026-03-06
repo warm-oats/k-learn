@@ -19,6 +19,7 @@ class DictModel:
         # Always be a list with dicts containing all parts of speech contexts
         return list(filter(lambda pos_context: pos_context, pos_contexts))
     
+    # Takes in raw JSON from API and splits into different word properties, returns dict
     def process_word_info(self, unprocessed_word: str, word_name: str):
         word_info = {}
         word_info["word_name"] = ''.join([letter for letter in unprocessed_word['meta']['id'] if letter.isalpha()])
